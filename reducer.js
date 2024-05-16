@@ -1,9 +1,6 @@
 const initialState = [];
-const action = {
-  type: "ADD_NAME",
-  payload: "Alice",
-};
-function reducer(state = initialState, action) {
+
+function reducer(state, action) {
   switch (action.type) {
     case "ADD_NAME":
       return [...state, action.payload];
@@ -13,3 +10,6 @@ function reducer(state = initialState, action) {
       return state;
   }
 }
+
+let newState = reducer(initialState, { type: "ADD_NAME", payload: "Bogdan" });
+console.log(newState); // ["Bogdan"]
