@@ -13,3 +13,8 @@ function reducer(state, action) {
 
 let newState = reducer(initialState, { type: "ADD_NAME", payload: "Bogdan" });
 console.log(newState); // ["Bogdan"]
+newState = reducer(newState, { type: "ADD_NAME", payload: "Alice" });
+console.log(newState);
+
+let stateDeleted = reducer(newState, { type: "REMOVE_NAME", payload: "Bogdan" });
+console.log(stateDeleted); // ["Alice"]
